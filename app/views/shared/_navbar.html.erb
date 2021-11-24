@@ -1,50 +1,44 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Navbar</a>
+        <a class="navbar-brand" href="/">ROR</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <%= link_to "Home", root_path, class: "nav-link active" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to "About Link", about_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="about">About</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </li>
+                <li class="nav-item">
+                    <%= link_to "Home", root_path, class: "nav-link active" %>
+                </li>
+                <% if Current.user %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="friends">Friends</a>
+                    </li>
+                <% end %>
+                <li class="nav-item">
+                    <%= link_to "About Link", about_path, class: "nav-link" %>
+                </li>
             </ul>
 
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <% if Current.user %>
-                    <li class="nav-item">
-                        <span class="d-flex justify-content-center align-items-center h-100 me-2">
-                            <%= link_to Current.user.email, edit_password_path, class: "nav-link" %>
-                        </span>
-                    </li>
-                    <li class="nav-item">
-                        <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-outline-primary" %>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <%= Current.user.email %>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><%= link_to "Edit password", edit_password_path, class: "dropdown-item" %></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><%= button_to "Logout", logout_path, method: :delete, class: "dropdown-item" %></li>
+                        </ul>
                     </li>
                 <% else %>
                     <li class="nav-item me-2">
-                        <%= link_to "Sign Up", sign_up_path, class: "btn btn-primary" %>
+                        <%= link_to "Sign In", sign_in_path, class: "btn btn-primary" %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Sign In", sign_in_path, class: "btn btn-outline-primary" %>
+                        <%= link_to "Sign Up", sign_up_path, class: "btn btn-outline-success" %>
                     </li>
                 <% end %>
             </ul>

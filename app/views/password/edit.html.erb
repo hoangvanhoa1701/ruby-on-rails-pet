@@ -1,9 +1,7 @@
 <div class="registration-form">
     <%= form_with model: Current.user, url: edit_password_path do |form| %>
         <h1 class="text-center">Edit password</h1>
-        <div class="form-icon">
-            <span><i class="icon icon-user"></i></span>
-        </div>
+        <div class="form-icon bg-warning"></div>
 
         <% if form.object.errors.any? %>
             <div class="alert alert-danger">
@@ -22,8 +20,8 @@
             <%= form.password_field :password_confirmation, class: "form-control item", placeholder: "password" %>
         </div>
 
-        <div class="form-group mx-auto">
-            <%= form.submit "Update Password", class: "btn btn-primary mr-4" %>
+        <div class="form-group text-center mt-4">
+            <%= form.submit "Update Password", class: "btn btn-warning mr-4" %>
         </div>
     <% end %>
 </div>

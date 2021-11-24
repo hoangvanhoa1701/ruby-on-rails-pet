@@ -1,9 +1,7 @@
 <div class="registration-form">
     <%= form_with model: @user, url: sign_up_path do |form| %>
         <h1 class="text-center">Sign Up</h1>
-        <div class="form-icon">
-            <span><i class="icon icon-user"></i></span>
-        </div>
+        <div class="form-icon bg-success"></div>
 
         <% if form.object.errors.any? %>
             <div class="alert alert-danger">
@@ -27,8 +25,8 @@
         </div>
 
         <div class="form-group mx-auto">
-            <%= form.submit "Sign Up", class: "btn btn-primary mr-4" %>
-            <%= link_to "Sign In", sign_in_path, class: "btn btn-primary" %>
+            <%= form.submit "Sign Up", class: "btn btn-success mr-4" %>
+            <%= link_to "Sign In", sign_in_path, class: "btn btn-outline-secondary" %>
         </div>
     <% end %>
 </div>

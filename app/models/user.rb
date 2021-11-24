@@ -12,4 +12,6 @@ class User < ApplicationRecord
         format: { with: URI::MailTo::EMAIL_REGEXP, 
         message: 'must be a valid email address' }, 
         uniqueness: { message: "has already been taken" }
+
+    has_many :friends
 end

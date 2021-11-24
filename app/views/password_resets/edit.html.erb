@@ -1,9 +1,7 @@
 <div class="registration-form">
     <%= form_with model: @user, url: password_reset_edit_path(token: params[:token], nova: "test") do |form| %>
         <h1 class="text-center">Reset your password!</h1>
-        <div class="form-icon">
-            <span><i class="icon icon-user"></i></span>
-        </div>
+        <div class="form-icon bg-dark"></div>
 
         <% if form.object.errors.any? %>
             <div class="alert alert-danger">
