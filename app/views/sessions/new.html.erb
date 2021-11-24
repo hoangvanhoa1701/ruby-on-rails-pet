@@ -1,0 +1,22 @@
+<div class="registration-form">
+    <%= form_with url: sign_in_path do |form| %>
+        <h1 class="text-center">Sign In</h1>
+        <div class="form-icon">
+            <span><i class="icon icon-user"></i></span>
+        </div>
+
+        <div class="form-group">
+            <%= form.label :email %>
+            <%= form.text_field :email, class: "form-control item", placeholder: "name@example.com" %>
+        </div>
+        <div class="form-group">
+            <%= form.label :password %>
+            <%= form.password_field :password, class: "form-control item", placeholder: "password" %>
+        </div>
+
+        <div class="form-group mx-auto">
+            <%= form.submit "Sign In", class: "btn btn-primary mr-4" %>
+            <%= link_to "Sign Up", sign_up_path, class: "btn btn-primary" %>
+        </div>
+    <% end %>
+</div>

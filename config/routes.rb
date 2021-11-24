@@ -7,6 +7,14 @@ Rails.application.routes.draw do
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
 
+  get "sign_in", to: "sessions#new"
+  post "sign_in", to: "sessions#create"
+
+  delete "logout", to: "sessions#destroy"
+
+  get "password", to: "password#edit", as: :edit_password
+  patch "password", to: "password#update"
+
   root to: "main#index"
   # get "/", to: "main#index"
 end
