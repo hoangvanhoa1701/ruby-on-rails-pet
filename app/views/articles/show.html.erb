@@ -1,10 +1,9 @@
 <div class="registration-form">
-    <h1>Article <%= @article.id %></h1>
-
-    <p id="notice"><%= notice %></p>
-
     <div class="card">
-      <img src="https://haymora.com/upload/files/cong_nghe_thong_tin/wata_solutions/moi-truong-lam-viec-nang-dong.jpg" class="card-img-top" alt="image">
+      <img src="<%= @article.image.url %>"
+      alt="<%= @article.image.filename %>"
+      style="height: 300px;object-fit: cover;"
+      class="card-img-top">
       <div class="card-body">
         <h5 class="card-title"><%= @article.title %></h5>
         <p class="card-text"><%= @article.body %></p>

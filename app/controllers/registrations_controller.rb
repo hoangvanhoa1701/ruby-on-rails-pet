@@ -11,6 +11,9 @@ class RegistrationsController < ApplicationController
         #<ActionController::Parameters {"password"=>"123", "password_confirmation"=>"123"} permitted: false>
 
         @user = User.new(user_params)
+        # TODO: Set role user
+        @user[:role] = 1
+
         if @user.save
             session[:user_id] = @user.id
             redirect_to root_path, notice: "Successfully created account!" 

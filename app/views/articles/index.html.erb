@@ -2,21 +2,24 @@
 
 <h1>Articles</h1>
 
-<%= link_to 'New Article', new_article_path, class: "btn btn-success mb-4" %>
-
+<% if Current.user %>
+  <%= link_to 'New Article', new_article_path, class: "btn btn-success mb-4" %>
+<% end %>
 
 <div class="row">
   <% @articles.each do |article| %>
     <div class="col-4 mb-4">
-      <div class="card">
-        <img src="https://haymora.com/upload/files/cong_nghe_thong_tin/wata_solutions/moi-truong-lam-viec-nang-dong.jpg" class="card-img-top" alt="image">
+      <div class="card" style="height: 100%">
+        <img src="<%= article.image.url %>"
+        alt="<%= article.image.filename %>"
+        class="card-img-top" 
+        style="height: 300px;object-fit: cover;"
+        >
         <div class="card-body">
           <h5 class="card-title"><%= article.title %></h5>
           <p class="card-text"><%= article.body %></p>
 
-          <%= link_to 'Edit', edit_article_path(article), class: "btn btn-sm btn-primary" %>
           <%= link_to 'Show', article, class: "btn btn-sm btn-outline-secondary" %>
-          <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
         </div>
       </div>
     </div>

@@ -14,4 +14,7 @@ class User < ApplicationRecord
         uniqueness: { message: "has already been taken" }
 
     has_many :friends
+    has_many :articles
+
+    enum role: { admin: 0, user: 1 }
 end
