@@ -11,22 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+  <div class="form-group">
+    <%= form.label :status %>
+    <%= form.select(:status, ['public', 'private', 'archived'], {}, { :class => "form-control item form-select" }) %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control item" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, class: "form-control item" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group mx-auto mt-4">
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
   </div>
 <% end %>

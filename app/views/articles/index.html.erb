@@ -2,26 +2,23 @@
 
 <h1>Articles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= link_to 'New Article', new_article_path, class: "btn btn-success mb-4" %>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+<div class="row">
+  <% @articles.each do |article| %>
+    <div class="col-4 mb-4">
+      <div class="card">
+        <img src="https://haymora.com/upload/files/cong_nghe_thong_tin/wata_solutions/moi-truong-lam-viec-nang-dong.jpg" class="card-img-top" alt="image">
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <p class="card-text"><%= article.body %></p>
 
-<%= link_to 'New Article', new_article_path %>
+          <%= link_to 'Edit', edit_article_path(article), class: "btn btn-sm btn-primary" %>
+          <%= link_to 'Show', article, class: "btn btn-sm btn-outline-secondary" %>
+          <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

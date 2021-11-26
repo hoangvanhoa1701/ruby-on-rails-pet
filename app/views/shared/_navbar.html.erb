@@ -8,15 +8,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <%= link_to "Home", root_path, class: "nav-link active" %>
+                    <%= active_link_to "Home", root_path, class: "nav-link" %>
                 </li>
                 <% if Current.user %>
                     <li class="nav-item">
-                        <a class="nav-link" href="friends">Friends</a>
+                        <%= active_link_to "Friends", friends_path, class: "nav-link" %>
+                    </li>
+                <% end %>
+                <% if Current.user %>
+                    <li class="nav-item">
+                        <%= active_link_to "Articles", articles_path, class: "nav-link" %>
                     </li>
                 <% end %>
                 <li class="nav-item">
-                    <%= link_to "About Link", about_path, class: "nav-link" %>
+                    <%= active_link_to "About", about_path, class: "nav-link" %>
                 </li>
             </ul>
 

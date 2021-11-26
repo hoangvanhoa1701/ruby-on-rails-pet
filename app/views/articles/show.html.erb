@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="registration-form">
+    <h1>Article <%= @article.id %></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
+    <div class="card">
+      <img src="https://haymora.com/upload/files/cong_nghe_thong_tin/wata_solutions/moi-truong-lam-viec-nang-dong.jpg" class="card-img-top" alt="image">
+      <div class="card-body">
+        <h5 class="card-title"><%= @article.title %></h5>
+        <p class="card-text"><%= @article.body %></p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+        <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-sm btn-primary" %>
+        <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+      </div>
+    </div>
+</div>
 
---------------------------------------
-
+<div class="registration-form">
 <h2>Comments</h2>
 <%= render @article.comments %>
 
---------------------------------------
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+<% if @article.comments.empty? %>
+  <p>Write your comment now!</p>
+<% end %>
+<div>
+<div class="registration-form">
+  <h3>Add a comment:</h3>
+  <%= render 'comments/form' %>
+<div>
