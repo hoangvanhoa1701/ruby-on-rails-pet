@@ -1,0 +1,5 @@
+id,email,password_digest,created_at,updated_at,role,image
+22,hoangvanhoa2@gmail.com,$2a$12$/cZB.hnV/fnxiRunuONlNOAIGQGPiUuQIeWt5Sza3jVDXU4Um6mKW,2021-11-24 07:20:23.439007,2021-11-24 08:08:16.372942,1,
+23,hoangvanhoa1701@gmail.com,$2a$12$fh2rk5cp40Yz7RH0.GfMYe1Hqvp5cIfQlXkOZA9O6gNBbnuloQ35S,2021-11-25 01:39:11.363536,2021-11-25 01:39:11.363536,1,
+26,hoangvanhoa3@gmail.com,$2a$12$STwH97yySESAfHOhgXEzMOnNBUlZEPVRmxbEqpllhIUdMtqp4z/vO,2021-11-26 06:33:56.368102,2021-11-26 06:33:56.368102,1,
+27,admin@gmail.com,$2a$12$AFSXNriR9S/Kqyr6IOrmp.xNvCZGw71YTxZHcn43vS.gCss5UUxUW,2021-11-26 06:35:02.130231,2021-11-26 06:35:02.130231,0,
